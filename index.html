@@ -1,1 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Truffle</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+    /* Loading Screen Styles */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #121212;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .loading-logo {
+      width: 100px;
+      height: 100px;
+      border: 4px solid rgba(255, 204, 102, 0.3);
+      border-top-color: #ffcc66;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-bar-container {
+      width: 200px;
+      height: 4px;
+      background-color: rgba(255, 204, 102, 0.2);
+      margin-top: 30px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .loading-bar {
+      height: 100%;
+      width: 0%;
+      background-color: #ffcc66;
+      border-radius: 2px;
+      transition: width 2s linear;
+    }
+
+    /* Main Content Styles */
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    header {
+      background-color: #1e1e1e;
+      padding: 20px;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      border-bottom: 3px solid #ffcc66;
+      position: relative;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .game-count {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-top: 5px;
+    }
+
+    .search-container {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: none;
+      background-color: #333;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      width: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+      margin-right: 10px;
+    }
+
+    .search-input.active {
+      width: 200px;
+      opacity: 1;
+    }
+
+    .search-input:focus {
+      outline: none;
+      width: 250px;
+      background-color: #444;
+    }
+
+    .search-button {
+      background: url('https://i.imgur.com/IDBTfh9.png') no-repeat center center;
+      background-size: contain;
+      width: 24px;
+      height: 24px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .search-button:hover {
+      transform: scale(1.1);
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .game-card {
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      border: 2px solid #333;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 250px;
+      transition: transform 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+      border-color: #ffcc66;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .game-title {
+      padding: 10px;
+      font-size: 1.1rem;
+      text-align: center;
+      background-color: #1e1e1e;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #333;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-logo">T</div>
+    <div class="loading-bar-container">
+      <div class="loading-bar" id="loadingBar"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <header>
+    <div class="header-content">
+      <div>Truffle</div>
+      <div class="game-count" id="gameCount">20 games available</div>
+    </div>
+    <div class="search-container" id="searchContainer">
+      <input type="text" class="search-input" placeholder="Search games..." id="searchInput">
+      <button class="search-button" id="searchButton"></button>
+    </div>
+  </header>
+
+  <section class="game-grid" id="gameGrid">
+    <div class="game-card" data-title="aquapark.io" onclick="window.open('https://ubg98.io/science/aquapark-io/?gd_sdk_referrer_url=https://ubg98.io/play/aquapark-io', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-0gQ5XEg07K.webp" alt="Aquapark.io">
+      <div class="game-title">Aquapark.io</div>
+    </div>
+    <div class="game-card" data-title="basket bros" onclick="window.open('https://ubg98.io/science/basket-bros/?gd_sdk_referrer_url=https://ubg98.io/play/basket-bros', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-S3MCIBEJjh.webp" alt="Basket Bros">
+      <div class="game-title">Basket Bros</div>
+    </div>
+    <div class="game-card" data-title="baldi's basics" onclick="window.open('https://ubg98.io/science/baldis-basics/?gd_sdk_referrer_url=https://ubg98.io/play/baldis-basics', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/XZF7ODF4Jb.webp" alt="Baldi's Basics">
+      <div class="game-title">Baldi's Basics</div>
+    </div>
+    <div class="game-card" data-title="minecraft classic" onclick="window.open('https://ubg98.io/science/minecraft-classic/?gd_sdk_referrer_url=https://ubg98.io/play/minecraft-classic', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/385srTQ6rO.webp" alt="Minecraft Classic">
+      <div class="game-title">Minecraft Classic</div>
+    </div>
+    <div class="game-card" data-title="basket random" onclick="window.open('https://ubg98.io/science/basket-random/?gd_sdk_referrer_url=https://ubg98.io/play/basket-random', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-KMJk7zRpdn.webp" alt="Basket Random">
+      <div class="game-title">Basket Random</div>
+    </div>
+    <div class="game-card" data-title="among us" onclick="window.open('https://ubg98.io/science/among-us/?gd_sdk_referrer_url=https://ubg98.io/play/among-us', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/EiVYlwRrL0.webp" alt="Among Us">
+      <div class="game-title">Among Us</div>
+    </div>
+    <div class="game-card" data-title="mr bullet" onclick="window.open('https://ubg98.io/science/mr-bullet/?gd_sdk_referrer_url=https://ubg98.io/play/mr-bullet', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/EmiSoCRau1.webp" alt="Mr Bullet">
+      <div class="game-title">Mr Bullet</div>
+    </div>
+    <div class="game-card" data-title="burrito bison" onclick="window.open('https://ubg98.io/science/burrito-bison-launcha-libre/?gd_sdk_referrer_url=https://ubg98.io/play/burrito-bison-launcha-libre', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-QHB5JaRcwW.webp" alt="Burrito Bison">
+      <div class="game-title">Burrito Bison</div>
+    </div>
+    <div class="game-card" data-title="bottle flip 3d" onclick="window.open('https://ubg98.io/science/bottle-flip-3d/?gd_sdk_referrer_url=https://ubg98.io/play/bottle-flip-3d', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/dmOT3xdUlO.webp" alt="Bottle Flip 3D">
+      <div class="game-title">Bottle Flip 3D</div>
+    </div>
+    <div class="game-card" data-title="subway surfers ny" onclick="window.open('https://ubg98.io/science/subway-surfers-new-york/?gd_sdk_referrer_url=https://ubg98.io/play/subway-surfers-new-york', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/ryTxbxbGwx.webp" alt="Subway Surfers NY">
+      <div class="game-title">Subway Surfers NY</div>
+    </div>
+    <div class="game-card" data-title="brain test 4" onclick="window.open('https://ubg98.io/science/brain-test-4-tricky-friends/?gd_sdk_referrer_url=https://ubg98.io/play/brain-test-4-tricky-friends', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/4O0ndknfQO.webp" alt="Brain Test 4">
+      <div class="game-title">Brain Test 4</div>
+    </div>
+    <div class="game-card" data-title="retro bowl" onclick="window.open('https://ubg98.io/science/retro-bowl/?gd_sdk_referrer_url=https://ubg98.io/play/retro-bowl', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/QWWEb36hHu.webp" alt="Retro Bowl">
+      <div class="game-title">Retro Bowl</div>
+    </div>
+    <div class="game-card" data-title="minesweeper" onclick="window.open('https://ubg98.io/science/minesweeper/?gd_sdk_referrer_url=https://ubg98.io/play/minesweeper', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/EF8nUxGdGN.webp" alt="Minesweeper">
+      <div class="game-title">Minesweeper</div>
+    </div>
+    <div class="game-card" data-title="cluster rush" onclick="window.open('https://ubg98.io/science/cluster-rush/?gd_sdk_referrer_url=https://ubg98.io/play/cluster-rush', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/cba5QDirOS.webp" alt="Cluster Rush">
+      <div class="game-title">Cluster Rush</div>
+    </div>
+    <div class="game-card" data-title="moto x3m" onclick="window.open('https://ubg98.io/science/moto-x3m/?gd_sdk_referrer_url=https://ubg98.io/play/moto-x3m', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/0OLjQZqp44.webp" alt="Moto X3M">
+      <div class="game-title">Moto X3M</div>
+    </div>
+    <div class="game-card" data-title="stack" onclick="window.open('https://ubg98.io/science/stack/?gd_sdk_referrer_url=https://ubg98.io/play/stack', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-eXdj1vY6w3.webp" alt="Stack">
+      <div class="game-title">Stack</div>
+    </div>
+    <div class="game-card" data-title="chess" onclick="window.open('https://ubg98.io/science/chess/?gd_sdk_referrer_url=https://ubg98.io/play/chess', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-62B9Aif4xS.webp" alt="Chess">
+      <div class="game-title">Chess</div>
+    </div>
+    <div class="game-card" data-title="stack bump 3d" onclick="window.open('https://ubg98.io/science/stack-bump-3d/?gd_sdk_referrer_url=https://ubg98.io/play/stack-bump-3d', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/OTLnBG1ZIr.webp" alt="Stack Bump 3D">
+      <div class="game-title">Stack Bump 3D</div>
+    </div>
+    <div class="game-card" data-title="suika game" onclick="window.open('https://ubg98.io/science/suika-game/?gd_sdk_referrer_url=https://ubg98.io/play/suika-game', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/RwVMkpGCRv.webp" alt="Suika Game">
+      <div class="game-title">Suika Game</div>
+    </div>
+    <div class="game-card" data-title="tunnel rush" onclick="window.open('https://ubg98.io/science/tunnel-rush/?gd_sdk_referrer_url=https://ubg98.io/play/tunnel-rush', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-hFzK8QyCLz.webp" alt="Tunnel Rush">
+      <div class="game-title">Tunnel Rush</div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Truffle. All rights reserved.
+  </footer>
+
+  <script>
+    // Loading Screen Animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const loadingScreen = document.getElementById('loading-screen');
+      const loadingBar = document.getElementById('loadingBar');
+      
+      // Start loading bar animation
+      loadingBar.style.width = '100%';
+      
+      // Hide loading screen after 2 seconds
+      setTimeout(function() {
+        loadingScreen.style.opacity = '0';
+        setTimeout(function() {
+          loadingScreen.style.display = 'none';
+        }, 500);
+      }, 4000);
+    });
+
+    // Main functionality
+    const searchButton = document.getElementById('searchButton');
+    const searchInput = document.getElementById('searchInput');
+    const searchContainer = document.getElementById('searchContainer');
+    const gameCountElement = document.getElementById('gameCount');
+    const gameCards = document.querySelectorAll('.game-card');
+
+    // Initialize game count
+    function updateGameCount() {
+      const visibleGames = document.querySelectorAll('.game-card:not(.hidden)').length;
+      gameCountElement.textContent = `${visibleGames} of ${gameCards.length} games available`;
+    }
+
+    // Initialize count on page load
+    updateGameCount();
+
+    // Toggle search input visibility
+    searchButton.addEventListener('click', function() {
+      searchInput.classList.toggle('active');
+      if (searchInput.classList.contains('active')) {
+        searchInput.focus();
+      }
+    });
+
+    // Search functionality
+    function searchGames() {
+      const searchTerm = searchInput.value.toLowerCase();
+      
+      gameCards.forEach(card => {
+        const title = card.getAttribute('data-title');
+        if (title.includes(searchTerm)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      
+      updateGameCount();
+    }
+
+    // Search when pressing Enter
+    searchInput.addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        searchGames();
+      }
+    });
+
+    // Close search when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!searchContainer.contains(event.target) && event.target !== searchButton) {
+        searchInput.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
