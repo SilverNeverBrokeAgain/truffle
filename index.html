@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="icon" type="image/png" href="favicon.png">
   <meta charset="UTF-8" />
@@ -81,7 +82,8 @@
       border-bottom-color: var(--border-color);
     }
 
-    .settings-option select, .settings-option input[type="checkbox"] {
+    .settings-option select,
+    .settings-option input[type="checkbox"] {
       background-color: var(--border-color);
       color: var(--text-color);
     }
@@ -146,7 +148,9 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .loading-bar-container {
@@ -180,7 +184,9 @@
     }
 
     @keyframes fadeIn {
-      to { opacity: 1; }
+      to {
+        opacity: 1;
+      }
     }
 
     header {
@@ -254,7 +260,8 @@
       margin-bottom: 5px;
     }
 
-    .settings-option select, .settings-option input[type="checkbox"] {
+    .settings-option select,
+    .settings-option input[type="checkbox"] {
       width: 100%;
       padding: 8px;
       border: none;
@@ -423,6 +430,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Loading Screen -->
   <div id="loading-screen">
@@ -477,7 +485,7 @@
     <button class="settings-button" id="settingsButton"></button>
     <div class="header-content">
       <div>Truffle</div>
-      <div class="game-count" id="gameCount">20 games available</div>
+      <div class="game-count" id="gameCount">41 games available</div>
     </div>
     <div class="search-container" id="searchContainer">
       <input type="text" class="search-input" placeholder="Search games..." id="searchInput">
@@ -486,85 +494,211 @@
   </header>
 
   <section class="game-grid" id="gameGrid">
-    <div class="game-card" data-title="aquapark.io" onclick="window.open('https://ubg98.io/science/aquapark-io/?gd_sdk_referrer_url=https://ubg98.io/play/aquapark-io', '_blank')">
+    <div class="game-card" data-title="aquapark.io"
+      onclick="window.open('https://ubg98.io/science/aquapark-io/?gd_sdk_referrer_url=https://ubg98.io/play/aquapark-io', '_blank')">
       <img src="https://ubg98.io/public/upload/game/thumb-0gQ5XEg07K.webp" alt="Aquapark.io">
       <div class="game-title">Aquapark.io</div>
     </div>
-    <div class="game-card" data-title="basket bros" onclick="window.open('https://ubg98.io/science/basket-bros/?gd_sdk_referrer_url=https://ubg98.io/play/basket-bros', '_blank')">
+    <div class="game-card" data-title="basket bros"
+      onclick="window.open('https://ubg98.io/science/basket-bros/?gd_sdk_referrer_url=https://ubg98.io/play/basket-bros', '_blank')">
       <img src="https://ubg98.io/public/upload/game/thumb-S3MCIBEJjh.webp" alt="Basket Bros">
       <div class="game-title">Basket Bros</div>
     </div>
-    <div class="game-card" data-title="baldi's basics" onclick="window.open('https://ubg98.io/science/baldis-basics/?gd_sdk_referrer_url=https://ubg98.io/play/baldis-basics', '_blank')">
+    <div class="game-card" data-title="baldi's basics"
+      onclick="window.open('https://ubg98.io/science/baldis-basics/?gd_sdk_referrer_url=https://ubg98.io/play/baldis-basics', '_blank')">
       <img src="https://ubg98.io/public/upload/game/XZF7ODF4Jb.webp" alt="Baldi's Basics">
       <div class="game-title">Baldi's Basics</div>
     </div>
-    <div class="game-card" data-title="minecraft classic" onclick="window.open('https://ubg98.io/science/minecraft-classic/?gd_sdk_referrer_url=https://ubg98.io/play/minecraft-classic', '_blank')">
+    <div class="game-card" data-title="minecraft classic"
+      onclick="window.open('https://ubg98.io/science/minecraft-classic/?gd_sdk_referrer_url=https://ubg98.io/play/minecraft-classic', '_blank')">
       <img src="https://ubg98.io/public/upload/game/385srTQ6rO.webp" alt="Minecraft Classic">
       <div class="game-title">Minecraft Classic</div>
     </div>
-    <div class="game-card" data-title="basket random" onclick="window.open('https://ubg98.io/science/basket-random/?gd_sdk_referrer_url=https://ubg98.io/play/basket-random', '_blank')">
+    <div class="game-card" data-title="basket random"
+      onclick="window.open('https://ubg98.io/science/basket-random/?gd_sdk_referrer_url=https://ubg98.io/play/basket-random', '_blank')">
       <img src="https://ubg98.io/public/upload/game/thumb-KMJk7zRpdn.webp" alt="Basket Random">
       <div class="game-title">Basket Random</div>
     </div>
-    <div class="game-card" data-title="among us" onclick="window.open('https://ubg98.io/science/among-us/?gd_sdk_referrer_url=https://ubg98.io/play/among-us', '_blank')">
+    <div class="game-card" data-title="among us"
+      onclick="window.open('https://ubg98.io/science/among-us/?gd_sdk_referrer_url=https://ubg98.io/play/among-us', '_blank')">
       <img src="https://ubg98.io/public/upload/game/EiVYlwRrL0.webp" alt="Among Us">
       <div class="game-title">Among Us</div>
     </div>
-    <div class="game-card" data-title="mr bullet" onclick="window.open('https://ubg98.io/science/mr-bullet/?gd_sdk_referrer_url=https://ubg98.io/play/mr-bullet', '_blank')">
+    <div class="game-card" data-title="mr bullet"
+      onclick="window.open('https://ubg98.io/science/mr-bullet/?gd_sdk_referrer_url=https://ubg98.io/play/mr-bullet', '_blank')">
       <img src="https://ubg98.io/public/upload/game/EmiSoCRau1.webp" alt="Mr Bullet">
       <div class="game-title">Mr Bullet</div>
     </div>
-    <div class="game-card" data-title="burrito bison" onclick="window.open('https://ubg98.io/science/burrito-bison-launcha-libre/?gd_sdk_referrer_url=https://ubg98.io/play/burrito-bison-launcha-libre', '_blank')">
+    <div class="game-card" data-title="burrito bison"
+      onclick="window.open('https://ubg98.io/science/burrito-bison-launcha-libre/?gd_sdk_referrer_url=https://ubg98.io/play/burrito-bison-launcha-libre', '_blank')">
       <img src="https://ubg98.io/public/upload/game/thumb-QHB5JaRcwW.webp" alt="Burrito Bison">
       <div class="game-title">Burrito Bison</div>
     </div>
-    <div class="game-card" data-title="bottle flip 3d" onclick="window.open('https://ubg98.io/science/bottle-flip-3d/?gd_sdk_referrer_url=https://ubg98.io/play/bottle-flip-3d', '_blank')">
+    <div class="game-card" data-title="bottle flip 3d"
+      onclick="window.open('https://ubg98.io/science/bottle-flip-3d/?gd_sdk_referrer_url=https://ubg98.io/play/bottle-flip-3d', '_blank')">
       <img src="https://ubg98.io/public/upload/game/dmOT3xdUlO.webp" alt="Bottle Flip 3D">
       <div class="game-title">Bottle Flip 3D</div>
     </div>
-    <div class="game-card" data-title="subway surfers ny" onclick="window.open('https://ubg98.io/science/subway-surfers-new-york/?gd_sdk_referrer_url=https://ubg98.io/play/subway-surfers-new-york', '_blank')">
+    <div class="game-card" data-title="subway surfers ny"
+      onclick="window.open('https://ubg98.io/science/subway-surfers-new-york/?gd_sdk_referrer_url=https://ubg98.io/play/subway-surfers-new-york', '_blank')">
       <img src="https://ubg98.io/public/upload/game/ryTxbxbGwx.webp" alt="Subway Surfers NY">
       <div class="game-title">Subway Surfers NY</div>
     </div>
-    <div class="game-card" data-title="brain test 4" onclick="window.open('https://ubg98.io/science/brain-test-4-tricky-friends/?gd_sdk_referrer_url=https://ubg98.io/play/brain-test-4-tricky-friends', '_blank')">
+    <div class="game-card" data-title="brain test 4"
+      onclick="window.open('https://ubg98.io/science/brain-test-4-tricky-friends/?gd_sdk_referrer_url=https://ubg98.io/play/brain-test-4-tricky-friends', '_blank')">
       <img src="https://ubg98.io/public/upload/game/4O0ndknfQO.webp" alt="Brain Test 4">
       <div class="game-title">Brain Test 4</div>
     </div>
-    <div class="game-card" data-title="retro bowl" onclick="window.open('https://ubg98.io/science/retro-bowl/?gd_sdk_referrer_url=https://ubg98.io/play/retro-bowl', '_blank')">
+    <div class="game-card" data-title="retro bowl"
+      onclick="window.open('https://ubg98.io/science/retro-bowl/?gd_sdk_referrer_url=https://ubg98.io/play/retro-bowl', '_blank')">
       <img src="https://ubg98.io/public/upload/game/QWWEb36hHu.webp" alt="Retro Bowl">
       <div class="game-title">Retro Bowl</div>
     </div>
-    <div class="game-card" data-title="minesweeper" onclick="window.open('https://ubg98.io/science/minesweeper/?gd_sdk_referrer_url=https://ubg98.io/play/minesweeper', '_blank')">
+    <div class="game-card" data-title="minesweeper"
+      onclick="window.open('https://ubg98.io/science/minesweeper/?gd_sdk_referrer_url=https://ubg98.io/play/minesweeper', '_blank')">
       <img src="https://ubg98.io/public/upload/game/EF8nUxGdGN.webp" alt="Minesweeper">
       <div class="game-title">Minesweeper</div>
     </div>
-    <div class="game-card" data-title="cluster rush" onclick="window.open('https://ubg98.io/science/cluster-rush/?gd_sdk_referrer_url=https://ubg98.io/play/cluster-rush', '_blank')">
+    <div class="game-card" data-title="cluster rush"
+      onclick="window.open('https://ubg98.io/science/cluster-rush/?gd_sdk_referrer_url=https://ubg98.io/play/cluster-rush', '_blank')">
       <img src="https://ubg98.io/public/upload/game/cba5QDirOS.webp" alt="Cluster Rush">
       <div class="game-title">Cluster Rush</div>
     </div>
-    <div class="game-card" data-title="moto x3m" onclick="window.open('https://ubg98.io/science/moto-x3m/?gd_sdk_referrer_url=https://ubg98.io/play/moto-x3m', '_blank')">
+    <div class="game-card" data-title="moto x3m"
+      onclick="window.open('https://ubg98.io/science/moto-x3m/?gd_sdk_referrer_url=https://ubg98.io/play/moto-x3m', '_blank')">
       <img src="https://ubg98.io/public/upload/game/0OLjQZqp44.webp" alt="Moto X3M">
       <div class="game-title">Moto X3M</div>
     </div>
-    <div class="game-card" data-title="stack" onclick="window.open('https://ubg98.io/science/stack/?gd_sdk_referrer_url=https://ubg98.io/play/stack', '_blank')">
+    <div class="game-card" data-title="stack"
+      onclick="window.open('https://ubg98.io/science/stack/?gd_sdk_referrer_url=https://ubg98.io/play/stack', '_blank')">
       <img src="https://ubg98.io/public/upload/game/thumb-eXdj1vY6w3.webp" alt="Stack">
       <div class="game-title">Stack</div>
     </div>
-    <div class="game-card" data-title="chess" onclick="window.open('https://ubg98.io/science/chess/?gd_sdk_referrer_url=https://ubg98.io/play/chess', '_blank')">
+    <div class="game-card" data-title="chess"
+      onclick="window.open('https://ubg98.io/science/chess/?gd_sdk_referrer_url=https://ubg98.io/play/chess', '_blank')">
       <img src="https://ubg98.io/public/upload/game/thumb-62B9Aif4xS.webp" alt="Chess">
       <div class="game-title">Chess</div>
     </div>
-    <div class="game-card" data-title="stack bump 3d" onclick="window.open('https://ubg98.io/science/stack-bump-3d/?gd_sdk_referrer_url=https://ubg98.io/play/stack-bump-3d', '_blank')">
+    <div class="game-card" data-title="stack bump 3d"
+      onclick="window.open('https://ubg98.io/science/stack-bump-3d/?gd_sdk_referrer_url=https://ubg98.io/play/stack-bump-3d', '_blank')">
       <img src="https://ubg98.io/public/upload/game/OTLnBG1ZIr.webp" alt="Stack Bump 3D">
       <div class="game-title">Stack Bump 3D</div>
     </div>
-    <div class="game-card" data-title="suika game" onclick="window.open('https://ubg98.io/science/suika-game/?gd_sdk_referrer_url=https://ubg98.io/play/suika-game', '_blank')">
+    <div class="game-card" data-title="suika game"
+      onclick="window.open('https://ubg98.io/science/suika-game/?gd_sdk_referrer_url=https://ubg98.io/play/suika-game', '_blank')">
       <img src="https://ubg98.io/public/upload/game/RwVMkpGCRv.webp" alt="Suika Game">
       <div class="game-title">Suika Game</div>
     </div>
-    <div class="game-card" data-title="tunnel rush" onclick="window.open('https://ubg98.io/science/tunnel-rush/?gd_sdk_referrer_url=https://ubg98.io/play/tunnel-rush', '_blank')">
+    <div class="game-card" data-title="tunnel rush"
+      onclick="window.open('https://ubg98.io/science/tunnel-rush/?gd_sdk_referrer_url=https://ubg98.io/play/tunnel-rush', '_blank')">
       <img src="https://ubg98.io/public/upload/game/thumb-hFzK8QyCLz.webp" alt="Tunnel Rush">
       <div class="game-title">Tunnel Rush</div>
+    </div>
+    <div class="game-card" data-title="3d free kick"
+      onclick="window.open('https://ubg98.io/science/3d-free-kick/?gd_sdk_referrer_url=https://ubg98.io/play/3d-free-kick', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-3d-free-kick.webp" alt="3D Free Kick">
+      <div class="game-title">3D Free Kick</div>
+    </div>
+    <div class="game-card" data-title="blumgi slime"
+      onclick="window.open('https://ubg98.io/science/blumgi-slime/?gd_sdk_referrer_url=https://ubg98.io/play/blumgi-slime', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-blumgi-slime.webp" alt="Blumgi Slime">
+      <div class="game-title">Blumgi Slime</div>
+    </div>
+    <div class="game-card" data-title="amazing strange rope police"
+      onclick="window.open('https://ubg98.io/science/amazing-strange-rope-police/?gd_sdk_referrer_url=https://ubg98.io/play/amazing-strange-rope-police', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-amazing-strange-rope-police.webp"
+        alt="Amazing Strange Rope Police">
+      <div class="game-title">Strange Rope Police</div>
+    </div>
+    <div class="game-card" data-title="8bit fiesta"
+      onclick="window.open('https://ubg98.io/science/8bit-fiesta-main/?gd_sdk_referrer_url=https://ubg98.io/play/8bit-fiesta', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-8bit-fiesta.webp" alt="8Bit Fiesta">
+      <div class="game-title">8Bit Fiesta</div>
+    </div>
+    <div class="game-card" data-title="boxrob 3"
+      onclick="window.open('https://ubg98.io/science/boxrob-3/?gd_sdk_referrer_url=https://ubg98.io/play/boxrob-3', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-boxrob-3.webp" alt="BoxRob 3">
+      <div class="game-title">BoxRob 3</div>
+    </div>
+    <div class="game-card" data-title="athlectics hero"
+      onclick="window.open('https://ubg98.io/science/athlectics-hero/?gd_sdk_referrer_url=https://ubg98.io/play/athlectics-hero', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-athlectics-hero.webp" alt="Athlectics Hero">
+      <div class="game-title">Athlectics Hero</div>
+    </div>
+    <div class="game-card" data-title="battlefields io"
+      onclick="window.open('https://ubg98.io/science/battlefields-io/?gd_sdk_referrer_url=https://ubg98.io/play/battlefields-io', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-battlefields-io.webp" alt="Battlefields.io">
+      <div class="game-title">Battlefields.io</div>
+    </div>
+    <div class="game-card" data-title="biker street"
+      onclick="window.open('https://ubg98.io/science/biker-street/?gd_sdk_referrer_url=https://ubg98.io/play/biker-street', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-biker-street.webp" alt="Biker Street">
+      <div class="game-title">Biker Street</div>
+    </div>
+    <div class="game-card" data-title="bouncy basketball"
+      onclick="window.open('https://ubg98.io/science/bouncy-basketball/?gd_sdk_referrer_url=https://ubg98.io/play/bouncy-basketball', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-bouncy-basketball.webp" alt="Bouncy Basketball">
+      <div class="game-title">Bouncy Basketball</div>
+    </div>
+    <div class="game-card" data-title="blocky trials"
+      onclick="window.open('https://ubg98.io/science/blocky-trials/?gd_sdk_referrer_url=https://ubg98.io/play/blocky-trials', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-blocky-trials.webp" alt="Blocky Trials">
+      <div class="game-title">Blocky Trials</div>
+    </div>
+    <div class="game-card" data-title="bellum io"
+      onclick="window.open('https://ubg98.io/science/bellum-io/?gd_sdk_referrer_url=https://ubg98.io/play/bellum-io', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-bellum-io.webp" alt="Bellum.io">
+      <div class="game-title">Bellum.io</div>
+    </div>
+    <div class="game-card" data-title="amazing bubble breaker"
+      onclick="window.open('https://ubg98.io/science/amazing-bubble-breaker-main/?gd_sdk_referrer_url=https://ubg98.io/play/amazing-bubble-breaker', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-amazing-bubble-breaker.webp" alt="Amazing Bubble Breaker">
+      <div class="game-title">Bubble Breaker</div>
+    </div>
+    <div class="game-card" data-title="block puzzle"
+      onclick="window.open('https://ubg98.io/science/block-puzzle/?gd_sdk_referrer_url=https://ubg98.io/play/block-puzzle', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-block-puzzle.webp" alt="Block Puzzle">
+      <div class="game-title">Block Puzzle</div>
+    </div>
+    <div class="game-card" data-title="bottle flip"
+      onclick="window.open('https://ubg98.io/science/bottle-flip/?gd_sdk_referrer_url=https://ubg98.io/play/bottle-flip', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-bottle-flip.webp" alt="Bottle Flip">
+      <div class="game-title">Bottle Flip</div>
+    </div>
+    <div class="game-card" data-title="agmaio"
+      onclick="window.open('https://ubg98.io/science/agmaio/?gd_sdk_referrer_url=https://ubg98.io/play/agmaio', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-agmaio.webp" alt="Agma.io">
+      <div class="game-title">Agma.io</div>
+    </div>
+    <div class="game-card" data-title="bloxorz"
+      onclick="window.open('https://ubg98.io/science/bloxorz/?gd_sdk_referrer_url=https://ubg98.io/play/bloxorz', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-bloxorz.webp" alt="Bloxorz">
+      <div class="game-title">Bloxorz</div>
+    </div>
+    <div class="game-card" data-title="block the pig"
+      onclick="window.open('https://ubg98.io/science/block-the-pig/?gd_sdk_referrer_url=https://ubg98.io/play/block-the-pig', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-block-the-pig.webp" alt="Block the Pig">
+      <div class="game-title">Block the Pig</div>
+    </div>
+    <div class="game-card" data-title="bad ice cream 2"
+      onclick="window.open('https://ubg98.io/science/bad-ice-cream-2/?gd_sdk_referrer_url=https://ubg98.io/play/bad-ice-cream-2', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-bad-ice-cream-2.webp" alt="Bad Ice Cream 2">
+      <div class="game-title">Bad Ice Cream 2</div>
+    </div>
+    <div class="game-card" data-title="volley random"
+      onclick="window.open('https://ubg98.io/science/volley-random/?gd_sdk_referrer_url=https://ubg98.io/play/volley-random', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-volley-random.webp" alt="Volley Random">
+      <div class="game-title">Volley Random</div>
+    </div>
+    <div class="game-card" data-title="blumgi castle"
+      onclick="window.open('https://ubg98.io/science/blumgi-castle/?gd_sdk_referrer_url=https://ubg98.io/play/blumgi-castle', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-blumgi-castle.webp" alt="Blumgi Castle">
+      <div class="game-title">Blumgi Castle</div>
+    </div>
+    <div class="game-card" data-title="antgameio"
+      onclick="window.open('https://ubg98.io/science/antgameio/?gd_sdk_referrer_url=https://ubg98.io/play/antgameio', '_blank')">
+      <img src="https://ubg98.io/public/upload/game/thumb-antgameio.webp" alt="AntGame.io">
+      <div class="game-title">AntGame.io</div>
     </div>
   </section>
 
@@ -574,17 +708,17 @@
 
   <script>
     // Loading Screen Animation
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const loadingScreen = document.getElementById('loading-screen');
       const loadingBar = document.getElementById('loadingBar');
-      
+
       // Start loading bar animation
       loadingBar.style.width = '100%';
-      
+
       // Hide loading screen after 2 seconds
-      setTimeout(function() {
+      setTimeout(function () {
         loadingScreen.style.opacity = '0';
-        setTimeout(function() {
+        setTimeout(function () {
           loadingScreen.style.display = 'none';
         }, 500);
       }, 2000);
@@ -600,14 +734,14 @@
     function updateFPS() {
       const now = performance.now();
       frameCount++;
-      
+
       if (now >= lastFpsUpdate + 1000) {
         fps = Math.round((frameCount * 1000) / (now - lastFpsUpdate));
         fpsCounter.textContent = `FPS: ${fps}`;
         frameCount = 0;
         lastFpsUpdate = now;
       }
-      
+
       requestAnimationFrame(updateFPS);
     }
 
@@ -632,12 +766,12 @@
       const savedAnimations = localStorage.getItem('animations') || 'enabled';
       const savedFpsToggle = localStorage.getItem('fpsToggle') === 'true';
       const savedFpsPosition = localStorage.getItem('fpsPosition') || 'top-right';
-      
+
       themeSelect.value = savedTheme;
       animationSelect.value = savedAnimations;
       fpsToggle.checked = savedFpsToggle;
       fpsPosition.value = savedFpsPosition;
-      
+
       // Apply saved settings
       applyTheme(savedTheme);
       applyAnimations(savedAnimations);
@@ -663,42 +797,42 @@
     }
 
     // Show/hide FPS position options based on toggle
-    fpsToggle.addEventListener('change', function() {
+    fpsToggle.addEventListener('change', function () {
       fpsPositionOption.style.display = this.checked ? 'block' : 'none';
     });
 
-    settingsButton.addEventListener('click', function() {
+    settingsButton.addEventListener('click', function () {
       settingsModal.style.display = 'block';
       modalOverlay.style.display = 'block';
     });
 
-    closeSettings.addEventListener('click', function() {
+    closeSettings.addEventListener('click', function () {
       settingsModal.style.display = 'none';
       modalOverlay.style.display = 'none';
     });
 
-    modalOverlay.addEventListener('click', function() {
+    modalOverlay.addEventListener('click', function () {
       settingsModal.style.display = 'none';
       modalOverlay.style.display = 'none';
     });
 
-    applySettings.addEventListener('click', function() {
+    applySettings.addEventListener('click', function () {
       // Get selected values
       const selectedTheme = themeSelect.value;
       const selectedAnimations = animationSelect.value;
       const showFps = fpsToggle.checked;
       const fpsPos = fpsPosition.value;
-      
+
       // Save to localStorage
       localStorage.setItem('theme', selectedTheme);
       localStorage.setItem('animations', selectedAnimations);
       localStorage.setItem('fpsToggle', showFps);
       localStorage.setItem('fpsPosition', fpsPos);
-      
+
       // Apply settings
       applyTheme(selectedTheme);
       applyAnimations(selectedAnimations);
-      
+
       // Apply FPS counter settings
       if (showFps) {
         fpsCounter.style.display = 'block';
@@ -706,7 +840,7 @@
       } else {
         fpsCounter.style.display = 'none';
       }
-      
+
       // Close the modal
       settingsModal.style.display = 'none';
       modalOverlay.style.display = 'none';
@@ -732,7 +866,7 @@
     updateGameCount();
 
     // Toggle search input visibility
-    searchButton.addEventListener('click', function() {
+    searchButton.addEventListener('click', function () {
       searchInput.classList.toggle('active');
       if (searchInput.classList.contains('active')) {
         searchInput.focus();
@@ -742,7 +876,7 @@
     // Search functionality
     function searchGames() {
       const searchTerm = searchInput.value.toLowerCase();
-      
+
       gameCards.forEach(card => {
         const title = card.getAttribute('data-title');
         if (title.includes(searchTerm)) {
@@ -751,23 +885,24 @@
           card.classList.add('hidden');
         }
       });
-      
+
       updateGameCount();
     }
 
     // Search when pressing Enter
-    searchInput.addEventListener('keyup', function(event) {
+    searchInput.addEventListener('keyup', function (event) {
       if (event.key === 'Enter') {
         searchGames();
       }
     });
 
     // Close search when clicking outside
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
       if (!searchContainer.contains(event.target) && event.target !== searchButton) {
         searchInput.classList.remove('active');
       }
     });
   </script>
 </body>
+
 </html>
